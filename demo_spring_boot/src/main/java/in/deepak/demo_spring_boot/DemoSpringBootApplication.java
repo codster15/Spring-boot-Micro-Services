@@ -10,7 +10,7 @@ public class DemoSpringBootApplication {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext ctx = SpringApplication.run(DemoSpringBootApplication.class, args);
 
-		car bean = ctx.getBean(car.class);
+
 
 
 
