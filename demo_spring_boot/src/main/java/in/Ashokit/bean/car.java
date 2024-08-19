@@ -1,4 +1,4 @@
-package in.Ashokit.demo_spring_boot;
+package in.Ashokit.bean;
 
 import org.springframework.stereotype.Component;
 
