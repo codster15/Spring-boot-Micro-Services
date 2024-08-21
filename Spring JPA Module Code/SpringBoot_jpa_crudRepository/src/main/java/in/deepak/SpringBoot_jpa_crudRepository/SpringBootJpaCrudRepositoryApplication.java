@@ -20,11 +20,16 @@ public class SpringBootJpaCrudRepositoryApplication {
 		BooksRepositiory repo = ctxt.getBean(BooksRepositiory.class);
 
 
-		Iterable<book_Entity> all = repo.findAll();
+		List<book_Entity> getbooks = repo.allNames();
+		getbooks.forEach(e-> System.out.println(e.getBookName()));
 
-		for (book_Entity book : all){
 
-			if(book.getBookAvailabilityStatus().equals("yes")  ){
+
+
+
+		for (book_Entity book : getbooks) {
+
+			if (book.getBookAvailabilityStatus().equals("yes")) {
 				System.out.println("book - " + book.getBookID());
 				System.out.println("book - " + book.getBookName());
 				System.out.println("book - " + book.getBookPrice());
