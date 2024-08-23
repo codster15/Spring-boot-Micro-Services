@@ -2,19 +2,23 @@ package in.deepak.Spring_jpa_Repositiory.Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Employee {
 
     @Id
-    private Integer Id;
-    private String  Name;
-    private Integer Salary;
+    private Integer id;
+    private String  name;
+    private Integer salary;
     private String  gender;
-    private String  Department;
+    private String  department;
 
 
 }
