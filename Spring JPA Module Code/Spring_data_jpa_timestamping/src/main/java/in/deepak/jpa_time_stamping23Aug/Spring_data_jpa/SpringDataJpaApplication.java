@@ -18,6 +18,12 @@ public class SpringDataJpaApplication {
 		ConfigurableApplicationContext ctx = SpringApplication.run(SpringDataJpaApplication.class, args);
 		PerformOperation bean = ctx.getBean(PerformOperation.class);
 
+		Products p = new Products("table" , 3500 , 18);
+
+
+		Products save = bean.save(p);
+		
+		System.out.println(save);
 
 
 //
