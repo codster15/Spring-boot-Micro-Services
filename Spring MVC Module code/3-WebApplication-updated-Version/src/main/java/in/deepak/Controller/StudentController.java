@@ -1,14 +1,14 @@
 package in.deepak.Controller;
 
-import StudentClass.Student;
+
+import in.deepak.StudentClass.Student;
 
 import in.deepak.ServiceClass.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.PostMapping;
 
 //@Controller // Indicates that this class is a Spring MVC controller. It handles web requests and returns views.
 //public class StudentController { // Defines the StudentController class.
@@ -33,22 +33,19 @@ public class StudentController {
     private StudentService service;
 
 
-    @GetMapping("/")
-    String indexPageLoad (Model model){
-
-        Student sobj = new Student();
-        sobj.setName("Raju");
-
-        List<String> courses = service.getCourse();
-
-        List<String> timing = service.getTiming();
 
 
-        model.addAttribute("bacche" ,sobj);
-        model.addAttribute("course" ,courses);
-        model.addAttribute("availableTime" ,timing);
-
-        return "index";
+    @GetMapping("/live")
+    String indexPageLoad(Model model){
+      model.addAttribute("test", "I am Working");
+        return "start";
     }
+
+
+
+
+
+
+
 
 }

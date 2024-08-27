@@ -12,9 +12,7 @@ public class StudentService {
         return Arrays.asList("java","DSA","Python","SpringBoot","Cloud");
     }
 
-    public List<String> getTiming(){
-        return Arrays.asList("Morning","Afternoon","Evening");
-    }
+
 
 
 }

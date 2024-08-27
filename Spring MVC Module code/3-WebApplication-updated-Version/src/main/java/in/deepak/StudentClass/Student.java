@@ -1,4 +1,4 @@
-package StudentClass;
+package in.deepak.StudentClass;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,6 +16,6 @@ public class Student {
     private String email;
     private String gender;
     private String course;
-    private String[] timing;
+
 
 }
