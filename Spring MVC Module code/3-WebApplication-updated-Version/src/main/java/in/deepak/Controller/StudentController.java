@@ -35,10 +35,10 @@ public class StudentController {
 
 
 
-    @GetMapping("/live")
+    @GetMapping("/greet")
     String indexPageLoad(Model model){
-      model.addAttribute("test", "I am Working");
-        return "start";
+      model.addAttribute("key", "I am Working in project 3");
+        return "index";
     }
 
 
