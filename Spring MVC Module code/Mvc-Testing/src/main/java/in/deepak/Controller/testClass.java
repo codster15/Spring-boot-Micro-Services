@@ -17,30 +17,32 @@ public class testClass {
     @Autowired
     private StudentRepository repo;
 
-    @GetMapping("/")
-    String indexPage(Model model){
-        Student s = new Student();
-        List<String> list = Arrays.asList("Java", "Devops", "Machine Learning", "Data Scientist");
-        model.addAttribute("Developers",s);
-        model.addAttribute("courselist" , list);
-        return "index";
-    }
-
-    @PostMapping("/submit")
-    String DataStorePage(Model m, Student student){
-
-        System.out.println(student);
-
-        repo.save(student);
-
-        Student s= new Student();
-        List<String> list = Arrays.asList("Java", "Devops", "Machine Learning", "Data Scientist");
-        m.addAttribute("Developers",s);
-        m.addAttribute("courselist" , list);
-        m.addAttribute("key","Form Submitted");
+                @GetMapping("/")
+                String indexPage(Model model){
+                    Student s = new Student();
+                    List<String> list = Arrays.asList("Java", "Devops", "Machine Learning", "Data Scientist");
+                    model.addAttribute("Developers",s);
+                    model.addAttribute("courselist" , list);
+                    return "index";
+                }
 
 
-        return "index";
-    }
+
+
+                @PostMapping("/submit")
+                String DataStorePage(Model m, Student student){
+
+                    System.out.println(student);
+                    repo.save(student);
+
+                    Student s= new Student();
+                    List<String> list = Arrays.asList("Java", "Devops", "Machine Learning", "Data Scientist");
+                    m.addAttribute("Developers",s);
+                    m.addAttribute("courselist" , list);
+                    m.addAttribute("key","Form Submitted");
+
+
+                    return "index";
+                }
 
 }
