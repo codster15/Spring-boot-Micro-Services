@@ -15,14 +15,9 @@ public class ProductService {
 
   public  boolean Storedata(Product product){
 
-
         ProductEntity proE = new ProductEntity();
-        System.out.println(proE);
-
 
         BeanUtils.copyProperties(product, proE);
-
-        System.out.println(proE);
 
         proInter.save(proE);
 
