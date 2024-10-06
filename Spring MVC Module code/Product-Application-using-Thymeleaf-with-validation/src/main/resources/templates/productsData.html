@@ -46,7 +46,13 @@
                 <td th:text="${p.name}" />
                 <td th:text="${p.price}" />
                 <td th:text="${p.quantity}" />
-                <td><a th:href="@{/delete?(id=${p.id})}" onclick="return deleteConfirm()" class="btn btn-danger">Delete</a></td>
+
+
+                <td>
+                    <a th:href="@{/edit?(id=${p.id})}"  class="btn btn-info">Edit</a>
+
+                    <a th:href="@{/delete?(id=${p.id})}" onclick="return deleteConfirm()" class="btn btn-danger">Delete</a>
+                </td>
             </tr>
 
              <tr>

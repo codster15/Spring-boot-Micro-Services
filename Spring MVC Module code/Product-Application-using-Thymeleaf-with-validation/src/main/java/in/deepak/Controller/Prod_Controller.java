@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class Prod_Controller {
@@ -77,6 +78,20 @@ public class Prod_Controller {
                 return "productsData";
             }
 
+            //---------------------------------   To edit the records   -----------------------------------------
+
+            @GetMapping ("/edit")
+            public String EditRecords (@RequestParam ("id") Integer id, Model model){
+
+                Optional<Prod_Entity> byId = pro.findById(id);
+
+                        if(byId.isPresent()){
+                            Prod_Entity prodEntity = byId.get();
+                            model.addAttribute("product" , prodEntity);
+
+                        }
 
 
+                return "index";
+            }
 }
